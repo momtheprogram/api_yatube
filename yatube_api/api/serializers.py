@@ -30,7 +30,3 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = ('id', 'author', 'post', 'text', 'created')
         read_only_fields = ('id', 'post',)
 
-    def validated_id(self, value):
-        if type(value) != int:
-            raise serializers.ValidationError()
-        return value
